@@ -12,12 +12,6 @@ export default defineConfig({
 		handlebars({
 			context: {
 				title: 'Веб мессенджер',
-				links: [
-					{
-						href: '/sign-in',
-						text: 'Вход',
-					},
-				],
 			},
 			partialsDirectory: resolve(__dirname, './src/components'),
 		}),
