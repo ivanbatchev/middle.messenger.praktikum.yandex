@@ -1,0 +1,20 @@
+{
+	"name": "web_messenger",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"engines": {
+		"node": "^20"
+	},
+	"scripts": {
+		"dev": "vite --port 3000",
+		"build": "vite build",
+		"start": "vite build && node server.js"
+	},
+	"devDependencies": {
+		"express": "^4.18.2",
+		"sass": "^1.70.0",
+		"vite": "^5.0.8",
+		"vite-plugin-handlebars": "^2.0.0"
+	}
+}
