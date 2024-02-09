@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+}
+
+body {
+	margin: 0;
+	font-family: $main-font;
+}
+
+a {
+	text-decoration: none;
+	color: $black-color;
+}
+
+li {
+	@include reset-list;
+}

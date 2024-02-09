@@ -1,26 +1,10 @@
-import { resolve } from 'path';
 import { defineConfig } from 'vite';
-import handlebars from 'vite-plugin-handlebars';
 
 export default defineConfig({
-	root: resolve(__dirname, 'src'),
+	root: './src',
 	build: {
-		outDir: resolve(__dirname, 'dist'),
-		emptyOutDir: false,
+		outDir: '../dist',
+		emptyOutDir: true,
 	},
-	plugins: [
-		handlebars({
-			context: {
-				title: 'Веб мессенджер',
-			},
-			partialsDirectory: resolve(__dirname, './src/components'),
-		}),
-	],
-	css: {
-		preprocessorOptions: {
-			scss: {
-				additionalData: `@import './src/styles/index.scss'`,
-			},
-		},
-	},
+	publicDir: '../static',
 });

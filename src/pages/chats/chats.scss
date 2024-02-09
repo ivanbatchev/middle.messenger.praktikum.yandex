@@ -1,0 +1,234 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+.chats {
+	max-height: 100vh;
+
+	.sidebar {
+		max-height: 100vh;
+		height: 100%;
+		border-right: 2px solid $light-grey-color;
+		flex-basis: 310px;
+		min-width: 310px;
+
+		&__header {
+			display: flex;
+			flex-flow: column nowrap;
+
+			.top {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 12px;
+			}
+
+			.logo {
+				width: 35px;
+				height: 35px;
+			}
+		}
+
+		.header__link {
+			color: $grey-color;
+			font-size: 12px;
+			line-height: 100%;
+			padding-right: 18px;
+		}
+	}
+
+	&__list {
+		margin-top: 14px;
+
+		.chat-item {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 72px;
+			width: 290px;
+			border-bottom: 1px solid $light-grey-color;
+
+			&:first-child {
+				border-top: 1px solid $light-grey-color;
+			}
+
+			.avatar {
+				margin: 0 10px;
+			}
+
+			&__sender {
+				flex-grow: 1;
+			}
+
+			&__name {
+				color: $black-color;
+				font-size: 13px;
+				font-weight: 600;
+				line-height: 100%;
+			}
+
+			&__last-message {
+				font-size: 12px;
+				color: $grey-color;
+				font-weight: 500;
+				line-height: 125%;
+				margin-top: 4px;
+			}
+
+			&__info {
+				display: flex;
+				flex-flow: column nowrap;
+				justify-content: space-evenly;
+				align-items: flex-end;
+				margin-right: 10px;
+				flex-basis: 50px;
+
+				.message-info__time {
+					color: $grey-color;
+					text-align: right;
+					font-size: 9px;
+					font-weight: 500;
+					line-height: 13px;
+				}
+
+				.message-info__unread-count {
+					width: 20px;
+					height: 20px;
+					color: $primary-color;
+					background-color: $secondary-color;
+					border-radius: 50%;
+					@include center-children;
+					font-size: 11px;
+					margin-top: 18px;
+				}
+			}
+		}
+
+		.chat__item_active {
+			background: $active-talk-color;
+		}
+	}
+
+	.conversation {
+		max-height: 100vh;
+		height: 100%;
+		flex-grow: 1;
+		position: relative;
+		overflow-y: hidden;
+
+		&__header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 90%;
+			margin: 0 auto;
+			padding-bottom: 10px;
+			border-bottom: 2px solid $light-grey-color;
+		}
+
+		&__user-info {
+			display: flex;
+			align-items: center;
+			color: $black-color;
+			font-size: 13px;
+			font-weight: 600;
+			line-height: 13px;
+
+			.avatar {
+				margin-right: 10px;
+			}
+		}
+
+		&__view {
+			color: $black-color;
+			font-size: 12px;
+			font-weight: 500;
+			line-height: 15px;
+		}
+
+		&__date {
+			color: $grey-color;
+			text-align: center;
+			font-size: 12px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 12px;
+			margin: 30px auto;
+		}
+
+		.message {
+			padding: 11px;
+			max-width: 45%;
+			width: fit-content;
+			border-radius: $primary-border-radius;
+		}
+
+		&__message-recieved {
+			background-color: $light-grey-color;
+			margin-right: auto;
+			margin-left: 20px;
+
+			&-time {
+				max-width: fit-content;
+				margin: 0;
+				margin-left: auto;
+				color: $grey-color;
+				text-align: right;
+				font-size: 9px;
+				font-style: normal;
+				font-weight: 500;
+				line-height: 9px;
+			}
+		}
+
+		&__message-sent {
+			background-color: $active-talk-color;
+			margin-left: auto;
+			margin-right: 20px;
+			display: flex;
+			position: relative;
+
+			&-status {
+				color: $secondary-color;
+				font-size: 9px;
+				max-width: fit-content;
+				margin-left: auto;
+				position: absolute;
+				bottom: 4px;
+				right: 4px;
+			}
+		}
+
+		&__message-type-bar {
+			display: flex;
+			justify-content: space-between;
+			max-width: 90%;
+			margin: 0 auto;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding: 20px 0;
+			border-top: 2px solid $light-grey-color;
+
+			.message-input {
+				border: none;
+				background-color: $light-grey-color;
+				padding: 0 20px;
+				outline: none;
+				color: $black-color;
+				font-size: 12px;
+				font-weight: 500;
+				line-height: 12px;
+				flex-grow: 1;
+				border-radius: 30px;
+				margin: 0 10px;
+
+				&::placeholder {
+					color: $grey-color;
+					font-size: 12px;
+					font-weight: 500;
+					line-height: 12px;
+				}
+			}
+		}
+	}
+}

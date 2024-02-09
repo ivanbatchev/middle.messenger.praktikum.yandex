@@ -1,0 +1,7 @@
+@import '../../styles/variables.scss';
+
+.avatar {
+	display: block;
+	border-radius: 50%;
+	background-color: $light-grey-color;
+}
