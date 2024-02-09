@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+
+.sign-up-form {
+	max-width: 340px;
+	width: 100%;
+	height: 615px;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: space-around;
+	box-shadow: $box-shadow;
+	border-radius: 12px;
+
+	&__header {
+		position: relative;
+		color: $black-color;
+		font-weight: 600;
+		font-size: 20px;
+		margin-top: 28px;
+	}
+
+	.logo {
+		position: absolute;
+		top: -20px;
+		right: -80px;
+		width: 40px;
+		height: 40px;
+	}
+}
