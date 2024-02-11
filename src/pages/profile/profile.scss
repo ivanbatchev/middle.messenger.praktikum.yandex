@@ -60,7 +60,7 @@
 			text-align: left;
 
 			&:last-child {
-				color: red;
+				color: $alert-color;
 			}
 		}
 	}
