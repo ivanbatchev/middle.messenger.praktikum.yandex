@@ -1,0 +1,67 @@
+@import '../../styles/variables.scss';
+
+.profile {
+	flex-flow: column nowrap;
+	align-items: flex-start;
+	max-height: 100vh;
+	max-width: 510px;
+	width: 100%;
+	height: 100%;
+
+	&__wrapper {
+		text-align: center;
+	}
+
+	&__settings {
+		max-width: 510px;
+		width: 100%;
+		margin-bottom: 20px;
+
+		.inputs-list {
+			display: flex;
+			flex-flow: column nowrap;
+			width: 100%;
+
+			.input-item {
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				border-bottom: 1px solid $light-grey-color;
+				margin-bottom: 16px;
+				padding-bottom: 4px;
+
+				&__input {
+					border: none;
+					outline: none;
+					text-align: right;
+					background: none;
+				}
+			}
+		}
+	}
+
+	&__user-name {
+		text-align: center;
+		margin: 20px auto;
+	}
+
+	&__links-list {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: flex-start;
+		width: 100%;
+
+		& > .link {
+			font-size: 20px;
+			padding-bottom: 10px;
+			padding-top: 8px;
+			border-bottom: 1px solid $light-grey-color;
+			width: 100%;
+			text-align: left;
+
+			&:last-child {
+				color: red;
+			}
+		}
+	}
+}

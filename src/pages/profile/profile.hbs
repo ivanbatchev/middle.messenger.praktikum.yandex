@@ -1,15 +1,38 @@
 <main class="page profile">
   <div class="profile__wrapper">
     {{{avatar}}}
+    <p class="profile__user-name">
+      {{firstName}}
+    </p>
   </div>
   <form class="profile__settings">
     <ul class="inputs__wrapper inputs-list">
-      <li class="input-item"></li>
-      <li class="input-item"></li>
-      <li class="input-item"></li>
-      <li class="input-item"></li>
-      <li class="input-item"></li>
+      {{#each inputs}}
+        <li class="input-item">
+          <label class="input-item__label">
+            {{label}}
+          </label>
+          <input
+            class="input-item__input"
+            type="{{type}}"
+            name="{{name}}"
+            placeholder="{{placeholder}}"
+            autocomplete="off"
+            {{#if ../infoMode}}
+              disabled
+            {{/if}}
+          />
+        </li>
+      {{/each}}
     </ul>
-    {{{button}}}
   </form>
+  {{#if infoMode}}
+    <ul class="profile__links-list">
+      {{#each links}}
+        {{{this}}}
+      {{/each}}
+    </ul>
+  {{else}} 
+    {{{button}}}
+  {{/if}}
 </main>
