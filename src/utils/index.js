@@ -1,3 +1,4 @@
-import { render } from './render';
-import { router, navigate } from './router';
+import { render } from "./render";
+import { router, navigate } from "./router";
+
 export { render, router, navigate };
