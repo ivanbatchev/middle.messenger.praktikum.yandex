@@ -1,6 +1,7 @@
-import notFound from './404/not-found.template';
-import signIn from './sign-in/sign-in.template';
-import signUp from './sign-up/sign-up.template';
-import chats from './chats/chats.template';
+import notFound from "./404";
+import signIn from "./sign-in";
+import signUp from "./sign-up";
+import chats from "./chats";
+import profile from "./profile";
 
-export { signIn, notFound, signUp, chats };
+export { signIn, notFound, signUp, chats, profile };

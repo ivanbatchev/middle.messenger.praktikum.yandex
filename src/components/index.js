@@ -1,6 +1,6 @@
-import input from './input/input.partial';
-import button from './button/button.partial';
-import link from './link/link.partial';
-import avatar from './profile-picture/profile-picture.partial';
+import avatar from './avatar';
+import input from './input';
+import link from './link';
+import button from './button';
 
-export { input, button, link, avatar };
+export { avatar, button, input, link };

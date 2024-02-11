@@ -1,5 +1,4 @@
-import { signIn, notFound, signUp, chats } from '../pages';
-import { render } from './render';
+import { routes } from '../routes';
 
 export const navigate = (url) => {
 	history.pushState({}, null, url);
@@ -7,14 +6,6 @@ export const navigate = (url) => {
 };
 
 export const router = () => {
-	const routes = [
-		{ path: '/', view: () => render(`Нажмите, чтобы увидеть страницу`) },
-		{ path: '/sign-in', view: () => render(signIn) },
-		{ path: '/sign-up', view: () => render(signUp) },
-		{ path: '/not-found', view: () => render(notFound) },
-		{ path: '/chats', view: () => render(chats) },
-	];
-
 	const matches = routes.map((route) => {
 		return {
 			route,

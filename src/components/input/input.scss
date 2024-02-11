@@ -1,53 +1,61 @@
 @import '../../styles/variables.scss';
 
-.labled-input {
-	display: flex;
-	flex-flow: column nowrap;
-	max-width: 280px;
-	width: 100%;
+.labeled-input {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 280px;
+  width: 100%;
 
-	&__label {
-		color: $grey-color;
-		font-size: 9px;
-		line-height: 100%;
-	}
+  &__label {
+    color: $grey-color;
+    font-size: 9px;
+    line-height: 100%;
+    margin-top: 4px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
 
-	&__input {
-		border: none;
-		outline: none;
-		border-bottom: 1px solid $secondary-color;
-		height: 28px;
-		font-size: 13px;
-		line-height: 100%;
-		color: $black-color;
-		font-weight: 500;
+  &__input:not(:placeholder-shown) + &__label {
+    visibility: visible;
+    opacity: 1;
+  }
 
-		&::placeholder {
-			font-size: inherit;
-			font-weight: inherit;
-			color: $grey-color;
-		}
+  &__input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $secondary-color;
+    height: 28px;
+    font-size: 13px;
+    line-height: 100%;
+    color: $black-color;
+    font-weight: 500;
 
-		&:focus::placeholder {
-			color: transparent;
-		}
-	}
+    &::placeholder {
+      font-size: inherit;
+      font-weight: inherit;
+      color: $grey-color;
+    }
 
-	.search-bar {
-		width: 290px;
-		height: 32px;
-		background-color: $light-grey-color;
-		border: none;
-		border-radius: 5px;
-		padding-left: 16px;
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
 
-		&::placeholder {
-			margin: 8px;
-		}
-	}
+  .search-bar {
+    width: 290px;
+    height: 32px;
+    background-color: $light-grey-color;
+    border: none;
+    border-radius: 5px;
+    padding-left: 16px;
 
-	.message-input {
-		width: 120%;
-		// border: none;
-	}
+    &::placeholder {
+      margin: 8px;
+    }
+  }
+
+  .message-input {
+    width: 120%;
+  }
 }
