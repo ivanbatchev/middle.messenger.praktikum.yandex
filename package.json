@@ -6,7 +6,7 @@
 		"node": "^18"
 	},
 	"scripts": {
-		"dev": "vite --port 3000 --host 192.168.0.208",
+		"dev": "vite --port 3000",
 		"build": "vite build",
 		"start": "vite build && node server.js"
 	},
