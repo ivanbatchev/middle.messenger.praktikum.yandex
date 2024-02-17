@@ -1,61 +1,68 @@
-@import '../../styles/variables.scss';
+@import '../../styles/variables';
 
 .labeled-input {
-  display: flex;
-  flex-flow: column nowrap;
-  max-width: 280px;
-  width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 280px;
+    width: 100%;
 
-  &__label {
-    color: $grey-color;
-    font-size: 9px;
-    line-height: 100%;
-    margin-top: 4px;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
-  }
-
-  &__input:not(:placeholder-shown) + &__label {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  &__input {
-    border: none;
-    outline: none;
-    border-bottom: 1px solid $secondary-color;
-    height: 28px;
-    font-size: 13px;
-    line-height: 100%;
-    color: $black-color;
-    font-weight: 500;
-
-    &::placeholder {
-      font-size: inherit;
-      font-weight: inherit;
-      color: $grey-color;
+    &__label {
+        color: $grey-color;
+        font-size: 9px;
+        line-height: 100%;
+        margin-top: 4px;
+        visibility: hidden;
+        opacity: 0;
+        transition:
+            visibility 0s,
+            opacity 0.5s linear;
     }
 
-    &:focus::placeholder {
-      color: transparent;
+    &__input:not(:placeholder-shown) + &__label {
+        visibility: visible;
+        opacity: 1;
     }
-  }
 
-  .search-bar {
-    width: 290px;
-    height: 32px;
-    background-color: $light-grey-color;
-    border: none;
-    border-radius: 5px;
-    padding-left: 16px;
-
-    &::placeholder {
-      margin: 8px;
+    &__input:focus + &__label {
+        visibility: visible;
+          opacity: 1;
     }
-  }
 
-  .message-input {
-    width: 120%;
-  }
+    &__input {
+        border: none;
+        outline: none;
+        border-bottom: 1px solid $secondary-color;
+        height: 28px;
+        font-size: 13px;
+        line-height: 100%;
+        color: $black-color;
+        font-weight: 500;
+
+        &::placeholder {
+            font-size: inherit;
+            font-weight: inherit;
+            color: $grey-color;
+        }
+
+        &:focus::placeholder {
+            color: transparent;
+        }
+    }
+
+    .search-bar {
+        width: 290px;
+        height: 32px;
+        background-color: $light-grey-color;
+        border: none;
+        border-radius: 5px;
+        padding-left: 16px;
+
+        &::placeholder {
+            margin: 8px;
+        }
+    }
+
+    .message-input {
+        width: 120%;
+    }
 }
