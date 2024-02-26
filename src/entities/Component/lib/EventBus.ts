@@ -1,20 +1,20 @@
 export class EventBus {
   private readonly listeners: {
-    [key: string]: Function[]
+    [key: string]: CallableFunction[]
   }
 
   constructor() {
     this.listeners = {}
   }
 
-  on = (event: string, callback: Function) => {
+  on = (event: string, callback: CallableFunction) => {
     if (!this.listeners[event]) {
       this.listeners[event] = []
     }
     this.listeners[event].push(callback)
   }
 
-  off = (event: string, callback: Function) => {
+  off = (event: string, callback: CallableFunction) => {
     if (!this.listeners[event]) {
       throw new Error(`Событие ${event} отсуствует`)
     }
@@ -23,7 +23,7 @@ export class EventBus {
     )
   }
 
-  emit = (event: string, ...args: any[]) => {
+  emit = (event: string, ...args: unknown[]) => {
     if (!this.listeners[event]) {
       throw new Error(`Событие ${event} отсуствует`)
     }

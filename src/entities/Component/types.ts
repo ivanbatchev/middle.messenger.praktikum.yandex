@@ -1,7 +1,7 @@
 import Component from './index'
 
 export type Props = {
-  [key: string]: any
+  [key: string]: unknown
   events?: {
     [key: string]: EventListener
   }

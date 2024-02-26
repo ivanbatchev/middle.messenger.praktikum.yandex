@@ -71,11 +71,11 @@ class Component {
 
   private _makePropsProxy(props: Props): Props {
     return new Proxy<Props>(props, {
-      get: (target, prop: string): any => {
+      get: (target, prop: string): unknown => {
         const value = target[prop]
         return typeof value === 'function' ? value.bind(target) : value
       },
-      set: (target, prop: string, value: any): boolean => {
+      set: (target, prop: string, value: unknown): boolean => {
         const prevValue = target[prop]
 
         target[prop] = value
@@ -130,8 +130,11 @@ class Component {
     this.componentDidMount()
   }
 
-  private _componentDidUpdate(oldProps: Props, newProps: Props) {
-    const response = this.componentDidUpdate(oldProps, newProps)
+  private _componentDidUpdate(oldProps?: Props, newProps?: Props) {
+    const response = this.componentDidUpdate(
+      oldProps as Props,
+      newProps as Props
+    )
     if (!response) {
       return
     }
